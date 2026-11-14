@@ -1,6 +1,7 @@
 ---
 name: business-advisor
 description: Evaluate and improve business decisions across industries, countries, and company stages. Use for strategy, business models, customer research, finance, sales, marketing, operations, or leadership when the user needs a recommendation or an execution plan.
+license: MIT
 metadata:
   short-description: Practical, candid business strategy and execution
 ---
