@@ -6,6 +6,8 @@ An agent skill for deciding what to do next in a business. Use it to evaluate a 
 
 ## Quick start
 
+The skill files work on Windows, macOS, and Linux wherever your agent supports Agent Skills. Run the installer in the same environment as the agent. For example, use the WSL terminal for an agent running inside WSL.
+
 Install the skill using the [Skills CLI](https://github.com/vercel-labs/skills). Run this from your project and select your agent when prompted.
 
 ```sh
@@ -19,6 +21,17 @@ gh skill install varun21vaidya/business-advisor-skill business-advisor --agent c
 ```
 
 For manual installation, copy the complete [business-advisor](skills/business-advisor/) folder into your harness's skills directory and keep the folder name. The skill follows the [Agent Skills specification](https://agentskills.io/specification) and uses Markdown and relative references. It runs without scripts, API keys, or MCP servers. The `agents/openai.yaml` file provides optional Codex display metadata.
+
+### Installation by operating system
+
+| Method | Windows | macOS and Linux |
+| --- | --- | --- |
+| Skills CLI | Install Node.js with npm, then run the `npx` command above in PowerShell or Command Prompt. If PowerShell blocks `npx.ps1`, use `npx.cmd`. | Install Node.js with npm, then run the same `npx` command in your terminal. |
+| GitHub CLI | Install or update GitHub CLI, then run the `gh skill install` command above in PowerShell or Command Prompt. | Install or update GitHub CLI, then run the same `gh skill install` command in your terminal. |
+| Manual with Git | Clone this repository with Git for Windows and copy `skills/business-advisor` into your agent's skills directory. | Clone this repository with Git and copy `skills/business-advisor` into your agent's skills directory. |
+| Manual with ZIP | Choose **Code → Download ZIP** on GitHub, extract it in File Explorer, and copy the skill folder. | Choose **Code → Download ZIP** on GitHub, extract it, and copy the skill folder. |
+
+For manual setup, check your agent's documentation for its project or user skills directory. In Windows, resolve a home-relative path from `%USERPROFILE%` in Command Prompt or `$env:USERPROFILE` in PowerShell. In macOS and Linux, use `~`. The final layout should be `<skills directory>/business-advisor/SKILL.md`, with `references/` alongside that file.
 
 Start a fresh session if your agent needs to reload skills, then ask it to use the **business-advisor** skill. Use the harness's native invocation if available, for example `$business-advisor` in Codex or `/business-advisor` in Claude Code. If your harness has no skill loader, point it to the skill instructions and tell it where to find the adjacent references, or provide those files directly.
 
